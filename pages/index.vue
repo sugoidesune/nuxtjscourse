@@ -1,10 +1,10 @@
 <template>
   <div class="home-page">
-    <section class="intro">
-      <h1>The positivity Circle</h1>
+    <section class="intro" :debug="debug('this is happening')">
+      <h1>The positivity Circle1</h1>
     </section>
 
-<PostList/>
+<PostList :newPosts='loadedPosts'/>
 
   </div>
 </template>
@@ -16,9 +16,18 @@ import PostList from '@/components/Posts/PostList'
 export default {
   components: {
     PostList
+  },
+  methods: {
+    debug (event) {
+      console.log(event)
+    }
+  },
+  computed: {
+    loadedPosts(){
+      return this.$store.getters.loadedPosts
+    }
   }
-
-}
+  }
 </script>
 
 <style scoped>

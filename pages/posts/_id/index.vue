@@ -1,18 +1,49 @@
 <template>
     <div class="single-post-page">
         <section class="post">
-            <h1>Title of Post</h1>
+            <h1>{{loadedPost.title}}</h1>
             <div class="post-details">
-                <div>Last updated on XXX</div>
-                <div>Written by NAME</div>
+                <div>Last updated on {{loadedPost.updateDate}}</div>
+                <div>Written by{{loadedPost.author}}</div>
             </div>
-            <p>Content of the post</p>
+            <p>{{loadedPost.content}}</p>
         </section>
         <section class="post-feedback">
             <p>let me know what you think<a href="/" class="href"> Feedback</a></p>
         </section>
     </div>
 </template>
+
+
+<script>
+export default {
+  asyncData(context){
+ // new Promise().catch(e=> context.error(e)) // error with nuxt with promises
+ return new Promise((resolve, reject)=>{
+
+   setTimeout(()=>{
+    // callback(new Error(),{ // on eror nuxt redirects to error page. 
+      resolve({
+       loadedPost: {
+         id: '1',
+         title: 'First Post (ID:' + context.params.id + ")",
+         previewText: 'This is our first post',
+         author: 'Timar',
+         updateDate: new Date(),
+         content: 'THis is the amazing content of this post it should be pretty clear its superior to anything out there',
+         thumbnail: 'https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-1280x1024.jpg'
+       }
+      })
+   },1500)
+ })
+ .then(data=> {
+   return data
+ })
+ .catch(e=>context.error(e))
+
+  }
+}
+</script>
 
 
 <style lang="css">

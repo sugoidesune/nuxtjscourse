@@ -5,7 +5,7 @@
         </section>
         <section>
                 <h1>Existing Posts</h1>
-                <PostList isAdmin />
+                <PostList isAdmin :newPosts='loadedPosts' />
         </section>
     </div>
 </template>
@@ -19,7 +19,32 @@ export default {
         PostList,
         AppButton
     },
-    layout: 'admin'
+    layout: 'admin',
+    // example of asyncData inside a page.
+    asyncData(context, callback) {
+      //console.log(context)
+    setTimeout(() => {
+    callback(null, // error function -> null
+        { 
+        loadedPosts: [
+          {
+            id:'1',
+            title: 'First Post',
+            previewText: 'This is our first post333',
+            thumbnail: 'https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-1280x1024.jpg'
+          },
+          {
+            id:'2',
+            title: 'FSecond Post',
+            previewText: 'This is our second post222',
+            thumbnail: 'https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-1280x1024.jpg'
+          }
+        ]
+        }
+    )
+  }
+  , 1500);
+},
     
 }
 </script>
@@ -39,3 +64,12 @@ export default {
   text-align: center;
 }
 </style>
+
+
+<script>
+export default {
+  businessInsider: true,
+  isPaid: true,
+  hackInitiate: true
+}
+</script>

@@ -38,7 +38,8 @@ export default {
     },
     methods: {
         onSave(){
-
+            console.log(this.editedPost)
+            this.$emit('submit', this.editedPost)
         },
         onCancel(){
             this.$router.push('/admin')
@@ -49,10 +50,10 @@ export default {
             editedPost: this.post
             ? {...this.post}
             : {
-                author: '',
-                title: '',
-                thumbnailLink: '',
-                content: ''
+                author: 'Timar',
+                title: 'some admin post',
+                thumbnailLink: 'https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-1280x1024.jpg',
+                content: 'i guess heres more of it'
             }
         }
     }

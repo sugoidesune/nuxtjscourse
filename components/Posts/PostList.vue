@@ -1,23 +1,12 @@
 <template>
     <section class="post-list" >
       <PostPreview
-        id="1"
+        v-for="post in newPosts" :key='post.id'
+        :id="post.id"
         :is-admin="isAdmin"
-        thumbnail="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-1280x1024.jpg"
-        title="Greeat title"
-        previewText="This is a great first blogpost about space"/>
-            <PostPreview
-        id="2"
-        :is-admin="isAdmin"
-        thumbnail="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-1280x1024.jpg"
-        title="Greeat title"
-        previewText="This is a great second blogpost about space"/>
-            <PostPreview
-        id="3"
-        :is-admin="isAdmin"
-        thumbnail="https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-1280x1024.jpg"
-        title="Greeat title"
-        previewText="This is a great third blogpost about space"/>
+        :thumbnail="post.thumbnail"
+        :title="post.title"
+        :previewText="post.previewText"/>
     </section>
 </template>
 
@@ -33,6 +22,28 @@ export default {
     isAdmin : {
       type: Boolean,
       default: false,
+    },
+    newPosts : {
+      type: Array,
+      required: true
+    }
+  },
+    data() {
+    return {
+      loadedPosts : [
+        {
+          id:'1',
+          title: 'First Post',
+          previewText: 'This is our first post',
+          thumbnail: 'https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-1280x1024.jpg'
+        },
+          {
+          id:'2',
+          title: 'FSecond Post',
+          previewText: 'This is our second post',
+          thumbnail: 'https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-1280x1024.jpg'
+          }
+      ]
     }
   }
 

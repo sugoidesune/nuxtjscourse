@@ -1,17 +1,24 @@
 <template>
     <div class="admin-new-post-page">
         <section class="new-post-form">
-            <AdminEditPost/>
+            <AdminEditPost @submit="onSubmitted"/>
         </section>
     </div>
 </template>
 
 <script>
+import axios from "axios"
 import AdminEditPost from "@/components/Admin/AdminEditPost"
 
 export default {
     components: {
         AdminEditPost
+    },
+    methods: {
+      onSubmitted(postData) {
+        console.log(postData)
+        axios.post("https://nuxtdb-8e40b.firebaseio.com/posts.json", postData).then(console.log).catch(console.warn)
+      }
     }
 }
 </script>

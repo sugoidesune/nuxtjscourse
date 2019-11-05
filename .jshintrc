@@ -1,0 +1,13 @@
+{
+    "esversion": 9,
+    "browser": true,
+    "devel": false,
+    "jquery": true,
+    "undef": true,
+    "unused": true,
+    "asi": true,
+    "globals": {
+    },
+    "exported": {
+    }
+  }
