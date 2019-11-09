@@ -1,6 +1,6 @@
 <template>
   <div class="home-page">
-    <section class="intro" :debug="debug('this is happening')">
+    <section class="intro">
       <h1>The positivity Circle1</h1>
     </section>
 
@@ -11,12 +11,8 @@
 
 <script>
 // for getting root folder @ or ~ its the same.
-import PostList from '@/components/Posts/PostList'
 
 export default {
-  components: {
-    PostList
-  },
   methods: {
     debug (event) {
       console.log(event)

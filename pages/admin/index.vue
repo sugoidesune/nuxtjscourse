@@ -11,40 +11,15 @@
 </template>
 
 <script>
-import PostList from '@/components/Posts/PostList'
-import AppButton from '@/components/UI/AppButton'
 
 export default {
-    components: {
-        PostList,
-        AppButton
-    },
     layout: 'admin',
-    // example of asyncData inside a page.
-    asyncData(context, callback) {
-      //console.log(context)
-    setTimeout(() => {
-    callback(null, // error function -> null
-        { 
-        loadedPosts: [
-          {
-            id:'1',
-            title: 'First Post',
-            previewText: 'This is our first post333',
-            thumbnail: 'https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-1280x1024.jpg'
-          },
-          {
-            id:'2',
-            title: 'FSecond Post',
-            previewText: 'This is our second post222',
-            thumbnail: 'https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-1280x1024.jpg'
-          }
-        ]
-        }
-    )
-  }
-  , 1500);
-},
+    computed: {
+      loadedPosts(){
+        //console.log(this.$store.getters.loadedPosts)
+       return this.$store.getters.loadedPosts
+      }
+    }
     
 }
 </script>
@@ -64,12 +39,3 @@ export default {
   text-align: center;
 }
 </style>
-
-
-<script>
-export default {
-  businessInsider: true,
-  isPaid: true,
-  hackInitiate: true
-}
-</script>

@@ -27,26 +27,7 @@ export default {
       type: Array,
       required: true
     }
-  },
-    data() {
-    return {
-      loadedPosts : [
-        {
-          id:'1',
-          title: 'First Post',
-          previewText: 'This is our first post',
-          thumbnail: 'https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-1280x1024.jpg'
-        },
-          {
-          id:'2',
-          title: 'FSecond Post',
-          previewText: 'This is our second post',
-          thumbnail: 'https://www.jpl.nasa.gov/spaceimages/images/wallpaper/PIA17563-1280x1024.jpg'
-          }
-      ]
-    }
   }
-
 }
 </script>
 

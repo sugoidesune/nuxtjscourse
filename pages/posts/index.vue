@@ -1,17 +1,13 @@
 <template>
     <div class="posts-page">
-<PostList :newPosts="loadedPosts"/>
+ <PostList :newPosts="loadedPosts"/>
     </div>
 </template>
 
 <script>
 // for getting root folder @ or ~ its the same.
-import PostList from '@/components/Posts/PostList'
 
 export default {
-  components: {
-    PostList
-  },
 
 computed: {
   loadedPosts(){
