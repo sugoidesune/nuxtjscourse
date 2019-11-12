@@ -11,4 +11,6 @@ Chapter 6 Finished
 Chapter 7 Video 9
 
 11.11.2019
-Chapter 7 Finished
+Chapter 8 Video 4
+
+12.11.2019 - 21:00
