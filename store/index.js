@@ -77,6 +77,7 @@ const createStore = () => {
               localStorage.setItem('tokenExpiration', new Date().getTime + res.expiresIn * 1000)
               cookie.set('jwt', res.idToken)
               cookie.set('expirationDate', new Date().getTime() + res.expiresIn * 1000)
+              return this.$axios.$post('http://localhost:3000/api/track-data', {data: 'Authenticated User'})
             }).catch(console.warn)
         },
         initAuth(vuexContext, req){
