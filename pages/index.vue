@@ -13,16 +13,11 @@
 // for getting root folder @ or ~ its the same.
 
 export default {
-  methods: {
-    debug (event) {
-      console.log(event)
-    }
-  },
   computed: {
     loadedPosts(){
       return this.$store.getters.loadedPosts
     }
-  }
+  },
   }
 </script>
 

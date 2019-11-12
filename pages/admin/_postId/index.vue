@@ -30,7 +30,8 @@ export default {
             this.$store.dispatch('editPost', editedPost)
             .then(()=> this.$router.push('/admin'))
         }
-    }
+    },
+    middleware: ['check-auth','auth']
 }
 </script>
 

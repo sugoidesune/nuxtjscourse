@@ -4,8 +4,9 @@
     "devel": false,
     "jquery": true,
     "undef": true,
-    "unused": true,
+    "unused": false,
     "asi": true,
+    "node": true,
     "globals": {
     },
     "exported": {

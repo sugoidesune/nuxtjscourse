@@ -19,7 +19,8 @@ export default {
         this.$store.dispatch('addPost', postData)
         .then(()=>this.$router.push('/admin'))
       }
-    }
+    },
+    middleware: ['check-auth','auth']
 }
 </script>
 

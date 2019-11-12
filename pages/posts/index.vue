@@ -5,19 +5,17 @@
 </template>
 
 <script>
-// for getting root folder @ or ~ its the same.
-
 export default {
-
-computed: {
-  loadedPosts(){
-    return this.$store.getters.loadedPosts
+  middleware: 'log',
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
   }
-}
-
-
-}
+};
 </script>
+
+
 <style scoped>
 .posts-page {
     display: flex;
