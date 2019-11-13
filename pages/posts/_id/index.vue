@@ -20,6 +20,9 @@ import axios from "axios"
 
 export default {
   asyncData(context){
+    if(context.payload){ // inserted only for generating files
+      return { loadedPost: context.payload.postData } // reduce http request but passing payload during generating
+    }
       return axios.get(`https://nuxtdb-8e40b.firebaseio.com/posts/${context.params.id}.json`)
   .then(res=> {
     return {
